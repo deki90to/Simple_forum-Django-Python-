@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+<h1> All posts: </h1>
+
+
+{% block listing %}
+
+
+<ul>
+<nav class="navbar navbar-dark">
+ <h5>Add new<a href="{% url 'add' %}" class="alert-link"> POST </a></h5>
+</nav>
+</ul>
+<br>
+
+
+	{% for post in all_posts %}
+
+	<ul>
+		<a href="details/{{ post.id }}"></a>
+	<!-- 		{{ post.id }} - 
+		{{ post.title }}</a> -->
+		<li><i> Posted: {{ post.created }} </i></li>
+		<h6>{{ post.text }} </h6>
+		<hr class="bg-success" />
+
+	</ul>
+	{% endfor %}
+
+<nav class="navbar navbar-dark">
+ <h5><a href="{% url 'add' %}" class="alert-link"> Add Post </a></h5>
+</nav>
+
+
+{% endblock %}
