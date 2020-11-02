@@ -4,15 +4,15 @@
 
 <br><br>
 	<ul>
-	<form method="post" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data" style="font-size:2vw; color:green;">
 	{% csrf_token %}
 	{{ form.as_p}}
 	<br><br>
-	<h2> 1) ⇧ Choose file ⇧ </h2>
-	<h2> 2) ⇩ Upload ⇩ </h2>
+	<h2 style="font-size:4vw; color:green;"> 1) ⇧ Choose file ⇧ </h2>
+	<h2 style="font-size:4vw; color:green;"> 2) ⇩ Upload ⇩ </h2>
 	<br><br>
-    <button type="submit" class="btn btn-success"> Upload </button></a>
-	<a href="{% url 'add' %}" class="btn btn-secondary" type="submit"> Back </a>  
+    <button type="submit" class="btn btn-success" style="font-size:2vw; color:white;"> Upload </button></a>
+	<a href="{% url 'add' %}" class="btn btn-secondary" type="submit" style="font-size:2vw; color:white;"> Back </a>  
 	</a>
 	</form>
 	<br>
@@ -22,3 +22,4 @@
 
 
 
+	

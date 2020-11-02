@@ -2,23 +2,25 @@
 
 {% block add_post %}
 
-<form method="POST" enctype="multipart/form-data">
+
+<ul><ul>
+<form method="POST" enctype="multipart/form-data" style="font-size:2vw; color:green;">
 	{% csrf_token %}
 	{{ form.as_p }}
-	<ul>
-	<br>
-		<h3> Type Something... </h3>
 		<br>
-		<textarea name='text' rows='3' cols='100'> </textarea>
+		<h3 style="font-size:4vw;"> Type Something... </h3>
+		<br>
+		<textarea name='text' rows='3' cols='50'> </textarea>
 		<br><br><br>
-		<input class="btn btn-success" type="submit" value="Post">
-		<a class="btn btn-secondary" href="{% url 'index' %}" role="button"> Cancel </a>
+		<input class="btn btn-success" type="submit" value="Post" style="font-size:2vw; color:white";>
+		<a class="btn btn-secondary" href="{% url 'index' %}" role="button" style="font-size:2vw; color:white;"> Cancel </a>
 		<br><br><br><br>
-		<h2>Upload Image or Video</h2>
+		<h2 style="font-size:4vw;">Upload Image or Video</h2>
 		<br>
-		<a class="btn btn-success" href="{% url 'upload' %}" role="button"> Upload File </a>
+		<a class="btn btn-success" href="{% url 'upload' %}" role="button" style="font-size:2vw; color:white;"> Upload File </a>
 		<br><br>
 </form>
+</ul></ul>
 
 {% endblock %}
 
