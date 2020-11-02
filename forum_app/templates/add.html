@@ -3,7 +3,7 @@
 {% block add_post %}
 
 
-<ul><ul>
+<ul>
 <form method="POST" enctype="multipart/form-data" style="font-size:2vw; color:green;">
 	{% csrf_token %}
 	{{ form.as_p }}
@@ -20,7 +20,7 @@
 		<a class="btn btn-success" href="{% url 'upload' %}" role="button" style="font-size:2vw; color:white;"> Upload File </a>
 		<br><br>
 </form>
-</ul></ul>
+</ul>
 
 {% endblock %}
 
