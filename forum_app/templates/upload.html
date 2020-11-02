@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
-
 {% block add_post %}
 
-
-<ul>
-<form method="post" enctype="multipart/form-data">
+<br><br>
+	<ul>
+	<form method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 	{{ form.as_p}}
-
-     <button type="submit" class="btn btn-danger"> Upload </button></a>
-
-	<a href="{% url 'index' %}" class="btn btn-secondary" type="submit"> Back </a>
-
-</form>
-<br>
-
-</ul>
+	<br><br>
+	<h2> 1) ⇧ Choose file ⇧ </h2>
+	<h2> 2) ⇩ Upload ⇩ </h2>
+	<br><br>
+    <button type="submit" class="btn btn-success"> Upload </button></a>
+	<a href="{% url 'add' %}" class="btn btn-secondary" type="submit"> Back </a>  
+	</a>
+	</form>
+	<br>
+	</ul>
 
 {% endblock %}
 

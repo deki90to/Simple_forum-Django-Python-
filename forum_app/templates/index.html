@@ -6,30 +6,32 @@
 
 <ul>
 <nav class="navbar navbar-dark">
- <h5> Add new <a href="{% url 'add' %}" class="alert-link"> POST </a></h5>
+ <h5> Add <a href="{% url 'add' %}" class="alert-link btn btn-success btn-sm"> NEW POST </a></h5>
 </nav>
 </ul>
 <br>
-	{% for post in all_posts %}
-		
-<!-- 		<a href="details/{{ post.id }}"></a> -->
-		<li><i> Posted: {{ post.created }} </i></li> 
-		<ul>
-		<h6> {{ post.text }} </h6>
-		<br>
-		
+{% for post in all_posts %}
 
-		{% if post.image %}
-		  <img src="{{ post.image.url }}" style="max-height:300px">
-		{% endif %}
+<ul>
+<li><i> Posted: {{ post.created }} </i></li> 
+	<h6> {{ post.text }} </h6>
 
+{% if post.image %}
+	<img src="{{ post.image.url }}" style="max-height:300px">
+{% endif %}
 
-			<hr class="bg-success" />
-		</ul>
-	{% endfor %}
+{% if post.video %}
+<video width='480' height= '320' id="intro" type="video/mp4" controls preload>
+	<source src="{{ post.video.url }}" type="video/mp4">
+</video>
+{% endif %}
+<hr class="bg-success" />
+</ul>
+
+{% endfor %}
 
 <nav class="navbar navbar-dark">
- <h5><a href="{% url 'index' %}" class="alert-link"> Refresh </a></h5>
+ <h5><a href="{% url 'index' %}" class="alert-link btn btn-success btn-sm"> Refresh </a></h5></button>
 </nav>
 
 {% endblock %}

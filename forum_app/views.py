@@ -4,8 +4,6 @@ from django.core.files.storage import FileSystemStorage
 from . forms import PostsForm
 from django.views.generic import CreateView
 
-
-
 # Create your views here.
 
 def index(request):
@@ -13,17 +11,14 @@ def index(request):
 	context = {'all_posts': all_posts}
 	return render(request, 'index.html', context)
 
-
 def details(request, id):
 	one = Posts.objects.get(id=id)
 	context = {'one': one}
 	return render(request, 'details.html', context)
 
-
 def admin(request):
 	response = redirect('admin')
 	return response
-
 
 def add(request):
 	if request.method == 'POST':
@@ -36,14 +31,15 @@ def add(request):
 	else:
 		return render(request, 'add.html')
 
-
 def upload(request):
 	if request.method == 'POST':
 		form = PostsForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
 			img_obj = form.instance
-			return render(request, 'upload.html', {'form':form, 'img_obj':img_obj})
+			return render(request, 'index.html', {'form':form, 'img_obj':img_obj})
 	else:
 		form = PostsForm()
 	return render(request, 'upload.html', {'form':form})
+
+
