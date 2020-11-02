@@ -6,9 +6,10 @@ from datetime import datetime
 
 class Posts(models.Model):
 	title = models.CharField(max_length=200)
-	text = models.TextField(null = True, blank = True)
+	text = models.TextField(null=True, blank=True)
 	created = models.DateTimeField(default=datetime.now)
-	image = models.ImageField(upload_to='images')
+	image = models.ImageField(upload_to='images', null=True, blank=True)
+	video = models.FileField(upload_to='videos', null=True, blank=True)
 
 
 	def __str__(self):
