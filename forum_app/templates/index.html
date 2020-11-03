@@ -6,20 +6,18 @@
 
 <ul>
 <nav class="navbar navbar-dark"style="font-size:5vw;">
- <h5 style="font-size:2vw;"> Add <a href="{% url 'add' %}" class="alert-link btn btn-success btn-sm" style="font-size:2vw;"> NEW POST </a></h5>
+ <h5 style="font-size:4vw;"> <a href="{% url 'add' %}" class="alert-link btn btn-success btn-sm" style="font-size:4vw;">Dodaj Mudrost </a></h5>
 </nav>
 </ul>
 <br>
 {% for post in all_posts %}
 
 <ul>
-<h5 style="font-size:2vw; background-color:lightgreen; border:2px solid lightgreen; color:black;padding:5px;"><li> Posted: {{ post.created }} </li> </h5>
-	<h6 style="font-size:2vw; color:black;padding:5px;"> {{ post.text }} </h6>
+<h5 style="font-size:2vw; background-color:lightgreen; border:2px solid lightgreen; color:black;padding:5px;"><li> Postavljeno: {{ post.created }} </li> </h5>
+	<h6 style="font-size:4vw; color:lightgreen; padding:5px;"> {{ post.text }} </h6>
 
 {% if post.image %}
-	<img src="{{ post.image.url }}" style="max-width:70%;height:auto;">
-<!-- 	style="width:100%; -->
-<!-- style="max-width:100%;height:auto; -->
+	<img src="{{ post.image.url }}" style="max-width:100%;height:auto;">
 {% endif %}
 
 {% if post.video %}
@@ -35,5 +33,5 @@
 <nav class="navbar navbar-dark">
 <a href="{% url 'index' %}" class="alert-link btn btn-success btn-sm"  style="font-size:2vw;"> Refresh </a>
 </nav>
-
+<h6> <strong>Refresh</strong> da vidis nove objave</h6>
 {% endblock %}

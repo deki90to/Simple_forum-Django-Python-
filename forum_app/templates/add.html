@@ -8,16 +8,16 @@
 	{% csrf_token %}
 	{{ form.as_p }}
 		<br>
-		<h3 style="font-size:4vw;"> Type Something... </h3>
+		<h3 style="font-size:4vw;"> Ovde kuckaj nesto... </h3>
 		<br>
 		<textarea name='text' rows='3' cols='50'> </textarea>
 		<br><br><br>
-		<input class="btn btn-success" type="submit" value="Post" style="font-size:2vw; color:white";>
-		<a class="btn btn-secondary" href="{% url 'index' %}" role="button" style="font-size:2vw; color:white;"> Cancel </a>
+		<input class="btn btn-success" type="submit" value="Objavi" style="font-size:2vw; color:white";>
+		<a class="btn btn-secondary" href="{% url 'index' %}" role="button" style="font-size:2vw; color:white;"> Odustani </a>
 		<br><br><br><br>
-		<h2 style="font-size:4vw;">Upload Image or Video</h2>
+		<h2 style="font-size:4vw;"> Odaberi sliku ili video </h2>
 		<br>
-		<a class="btn btn-success" href="{% url 'upload' %}" role="button" style="font-size:2vw; color:white;"> Upload File </a>
+		<a class="btn btn-success" href="{% url 'upload' %}" role="button" style="font-size:2vw; color:white;"> Odaberi fajl </a>
 		<br><br>
 </form>
 </ul>

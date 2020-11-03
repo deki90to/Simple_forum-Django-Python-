@@ -8,6 +8,6 @@ class PostsForm(forms.ModelForm):
 		fields = ('text', 'image', 'video',)
 
 		widgets = {
-			'text':forms.Textarea({'placeholder':'Add some description here...or not', 'rows':1, 'cols':40})
+			'text':forms.Textarea({'placeholder':'Ubaci opis...ili ne', 'rows':1, 'cols':40})
 		}
 		
