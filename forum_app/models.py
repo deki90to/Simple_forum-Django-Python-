@@ -13,7 +13,8 @@ class Posts(models.Model):
 
 
 	def __str__(self):
-		return self.title
+		return f'{self.text}, {self.image}, {self.video}'
+
 
 	class Meta:
 		verbose_name_plural = 'Posts'
